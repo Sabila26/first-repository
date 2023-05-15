@@ -1,0 +1,147 @@
+<html>
+<head>
+	<title>Toko HP</title>
+    <link rel="stylesheet" href="probel.css">
+</head>
+<body>
+	<div style="text-align: center;">
+	<h2> Sabila's PhoneStore </h2>
+	<form>
+		<label for="nama-pembeli">Nama Pembeli</label>
+		<input type="text" id="nama-pembeli"><br>
+
+		<label for="HP">HP</label>
+		<select id="HP" onchange="setHargaHP()">
+			<option value="" disabled selected>Pilih Handphone</option>
+			<option value="SG S21 5G" data-harga="13117500">Samsung Galaxy S21 5G 8/128GB</option>
+			<option value="SG S21 FE" data-harga="9199000">Samsung Galaxy S21 FE 8/256GB</option>
+			<option value="SG Z Flip" data-harga="17699000">Samsung Galaxy Z Flip 8/512GB</option>
+            <option value="SG Z Fold 5G" data-harga="24999000">Samsung Galaxy Z Fold 5G 12/256GB</option>
+            <option value="SG S23 Ultra" data-harga="25999000">Samsung Galaxy S23 Ultra 12/1TB</option>
+            <option value="IP 12" data-harga="10499000">Apple iPhone 12 4/64GB</option>
+            <option value="IP 13" data-harga="11999000">Apple iPhone 13 4/128GB</option>
+            <option value="IP 13 Pro Max" data-harga="19499000">Apple iPhone 13 Pro Max 6/128GB</option>
+            <option value="IP SE" data-harga="9499000">Apple iPhone SE (2022) 4/128GB</option>
+            <option value="IP 14" data-harga="13999000">Apple iPhone 14 6/128GB</option>
+            <option value="IP 14 Plus" data-harga="15999000">Apple iPhone 14 Plus 6/128GB</option>
+            <option value="IP 14 Pro" data-harga="18499000">Apple iPhone 14 Pro 6/128GB</option>
+            <option value="IP 14 Pro Max" data-harga="20499000">Apple iPhone 14 Pro Max 6/128GB</option>
+            <option value="mi Mix Fold 2" data-harga="35499000">Xiaomi Mix Fold 2 12/512GB</option>
+            <option value="mi 12 Pro" data-harga="12999000">Xiaomi 12 Pro 12/256GB</option>
+			<option value="mi 12" data-harga="7799000">Xiaomi 12 8/256GB</option>
+			<option value="mi POCO F4 GT" data-harga="7679000">POCO F4 GT 12/256GB</option>
+			<option value="mi K60 Pro" data-harga="11599000">Redmi K60 Pro 8/256GB</option>
+		</select><br>
+        <label for="jumlah-HP">Jumlah</label>
+        <input type="number" id="jumlah-HP"><br>
+		<label for="harga-HP">Harga HP</label>
+		<input type="number" id="harga-HP" disabled><br>
+
+		<label for="HP2">HP2</label>
+		<select id="HP2" onchange="setHargaHP2()">
+			<option value="" disabled selected>Pilihan Lain</option>
+			<option value="SG S21 5G" data-harga="13117500">Samsung Galaxy S21 5G 8/128GB</option>
+			<option value="SG S21 FE" data-harga="9199000">Samsung Galaxy S21 FE 8/256GB</option>
+			<option value="SG Z Flip" data-harga="17699000">Samsung Galaxy Z Flip 8/512GB</option>
+            <option value="SG Z Fold 5G" data-harga="24999000">Samsung Galaxy Z Fold 5G 12/256GB</option>
+            <option value="SG S23 Ultra" data-harga="25999000">Samsung Galaxy S23 Ultra 12/1TB</option>
+            <option value="IP 12" data-harga="10499000">Apple iPhone 12 4/64GB</option>
+            <option value="IP 13" data-harga="11999000">Apple iPhone 13 4/128GB</option>
+            <option value="IP 13 Pro Max" data-harga="19499000">Apple iPhone 13 Pro Max 6/128GB</option>
+            <option value="IP SE" data-harga="9499000">Apple iPhone SE (2022) 4/128GB</option>
+            <option value="IP 14" data-harga="13999000">Apple iPhone 14 6/128GB</option>
+            <option value="IP 14 Plus" data-harga="15999000">Apple iPhone 14 Plus 6/128GB</option>
+            <option value="IP 14 Pro" data-harga="18499000">Apple iPhone 14 Pro 6/128GB</option>
+            <option value="IP 14 Pro Max" data-harga="20499000">Apple iPhone 14 Pro Max 6/128GB</option>
+            <option value="mi Mix Fold 2" data-harga="35499000">Xiaomi Mix Fold 2 12/512GB</option>
+            <option value="mi 12 Pro" data-harga="12999000">Xiaomi 12 Pro 12/256GB</option>
+			<option value="mi 12" data-harga="7799000">Xiaomi 12 8/256GB</option>
+			<option value="mi POCO F4 GT" data-harga="7679000">POCO F4 GT 12/256GB</option>
+			<option value="mi K60 Pro" data-harga="11599000">Redmi K60 Pro 8/256GB</option>
+		</select><br>
+        <label for="jumlah-HP2">Jumlah</label>
+        <input type="number" id="jumlah-HP2"><br>
+		<label for="harga-HP2">Harga HP</label>
+		<input type="number" id="harga-HP2" disabled><br>
+
+		<label for="uang-tunai">Uang Tunai:</label>
+		<input type="number" id="uang-tunai"><br>
+		<button type="button" onclick="hitungBelanja()">Hitung Belanja</button>
+        <button type="button" onclick="tampilTotalHarga()">Total Harga</button>
+		<div id="total-harga"></div>
+	</form>
+
+	<div id="output"></div>
+
+	<script>
+			// membuat opsi pertama terpilih secara default
+			document.getElementById("HP").selectedIndex = 0;
+			document.getElementById("HP2").selectedIndex = 0
+		function setHargaHP() {
+			var hargaHP = document.getElementById("HP").options[document.getElementById("HP").selectedIndex].dataset.harga;
+			document.getElementById("harga-HP").value = hargaHP;
+		}
+
+		function setHargaHP2() {
+			var hargaHP2 = document.getElementById("HP2").options[document.getElementById("HP2").selectedIndex].dataset.harga;
+			document.getElementById("harga-HP2").value = hargaHP2;
+		}
+
+		function hitungBelanja() {
+			// Ambil data input
+			var namaPembeli = document.getElementById("nama-pembeli").value;
+			var HP = document.getElementById("HP").value;
+			var hargaHP = parseInt(document.getElementById("harga-HP").value);
+            var jumlahHP = parseInt(document.getElementById("jumlah-HP").value);
+			var HP2 = document.getElementById("HP2").value;
+			var hargaHP2 = parseInt(document.getElementById("harga-HP2").value);
+            var jumlahHP2 = parseInt(document.getElementById("jumlah-HP2").value);
+			var uangTunai = parseInt(document.getElementById("uang-tunai").value);
+
+			//tambahan event listener untuk tombol tampilkan total harga
+			var tampilButon = document.createElement("button");
+			tampilButon.innerHTML = "Total Harga";
+			tampilButon.onclick = tampilTotalHarga;
+			document.getElementById("output").appendChild(tampilButon);
+
+            // periksa apakah ada input yang kosong
+            if (namaPembeli === "" || HP === "" || hargaHP === 0 || HP2 === "" || hargaHP2 === 0 || uangTunai === 0) {
+            alert("Harap isi semua input sebelum menghitung belanja.");
+            return;
+            }
+
+			// Hitung total harga
+			var totalHarga = hargaHP * jumlahHP + hargaHP2 * jumlahHP2;
+
+			// Hitung kembalian
+			var kembalian = uangTunai - totalHarga;
+
+           	// Menampilkan output belanja
+            alert(`
+            Catatan Belanja
+            Nama Pembeli: ${namaPembeli}
+            HP yang dibeli: ${HP} (Harga: ${hargaHP} Rupiah x ${jumlahHP})
+            HP lain yang dibeli: ${HP2} (Harga: ${hargaHP2} Rupiah x ${jumlahHP2})
+            Total Harga: ${totalHarga} Rupiah
+            Uang Tunai: ${uangTunai} Rupiah
+            Kembalian: ${kembalian} Rupiah
+        `   );
+    		// Menampilkan pesan terima kasih
+	        alert(`Terima kasih!`);
+        }
+		function tampilTotalHarga(){
+			//ambil input
+			var hargaHP = parseInt(document.getElementById("harga-HP").value);
+            var jumlahHP = parseInt(document.getElementById("jumlah-HP").value);
+			var hargaHP = parseInt(document.getElementById("harga-HP").value);
+            var jumlahHP2 = parseInt(document.getElementById("jumlah-HP2").value);
+
+			//Hitung total harga
+			var totalHarga = hargaHP * jumlahHP + hargaHP2 * jumlahHP2;
+
+			//menampilkan total harga
+			document.getElementById("total-harga").innerHTML ="Total Harga: "+ totalHarga + "Rupiah"
+		}
+        </script>       
+    </body>
+</html>
