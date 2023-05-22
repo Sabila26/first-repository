@@ -1,0 +1,38 @@
+body {
+    background-color: #86775f;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #000;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3e424b;
+    color: #D2B48C;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+a {
+    color: #FFFF00;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+

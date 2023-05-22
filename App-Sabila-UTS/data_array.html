@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Array</title>
+  <link rel="stylesheet" type="text/css" href="array.css">
+</head>
+<body>
+  <h1>Data Array</h1>
+
+  <div id="data"></div>
+
+  <button onclick="tampilkanData()">Tampilkan Data</button>
+  <button onclick="tambahData()">Tambah Data</button>
+  <button onclick="hapusData()">Hapus Data</button>
+
+  <script>
+    var Nama = ["Sabila Mawarda"];
+    var TahunLahir = [2002];
+    var NoHP = ["085741366846"];
+    var Alamat = ["Jurang Gebog Kudus"]
+
+    function tampilkanData() {
+      var dataDiv = document.getElementById('data');
+      var output = '';
+
+      for (var i = 0; i < Nama.length; i++) {
+        output += '<p>Nama: ' + Nama[i] + '</p>';
+        output += '<p>Tahun Lahir: ' + TahunLahir[i] + '</p>';
+        output += '<p>No. HP: ' + NoHP[i] + '</p>';
+        output += '<p>Alamat: ' + Alamat[i] + '</p>';
+        output += '<hr>';
+      }
+
+      dataDiv.innerHTML = output;
+    }
+
+    function tambahData() {
+      var namaBaru = prompt("Masukkan Nama:");
+      var tahunLahirBaru = parseInt(prompt("Masukkan Tahun Lahir:"));
+      var noHPBaru = prompt("Masukkan No. HP:");
+      var alamatBaru = prompt("Masukkan Alamat:");
+
+      Nama.push(namaBaru);
+      TahunLahir.push(tahunLahirBaru);
+      NoHP.push(noHPBaru);
+      Alamat.push(alamatBaru);
+
+      tampilkanData();
+    }
+
+    function hapusData() {
+      var index = parseInt(prompt("Masukkan index data yang ingin dihapus (0 - " + (Nama.length - 1) + "):"));
+
+      if (index >= 0 && index < Nama.length) {
+        Nama.splice(index, 1);
+        TahunLahir.splice(index, 1);
+        NoHP.splice(index, 1);
+        Alamat.splice(index, 1);
+        tampilkanData();
+      } else {
+        alert("Index tidak valid!");
+      }
+    }
+  </script>
+</body>
+</html>

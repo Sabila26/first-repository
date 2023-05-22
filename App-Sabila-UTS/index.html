@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Nilai Mahasiswa</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h2>Silahkan Inputkan Data dan Nilai!</h2>
+
+    <form id="nilaiForm">
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" required><br>
+
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" required><br>
+
+        <label for="Semester">Semester:</label>
+        <select id="Semester">
+            <option selected disabled>Pilih</option>
+            <option value="1 (Satu)">1</option>
+            <option value="2 (Dua)">2</option>
+            <option value="3 (Tiga)">3</option>
+            <option value="4 (Empat)">4</option>
+            <option value="5 (Lima)">5</option>
+            <option value="6 (Enam)">6</option>
+            <option value="7 (Tujuh)">7</option>
+            <option value="8 (Delapan)">8</option>
+        </select><br>
+
+        <label for="mataKuliah">Mata Kuliah:</label>
+        <select id="mataKuliah">
+            <option selected disabled>Pilih Mata Kuliah</option>
+        <option value="Arsitektur Komputer">Arsitektur Komputer</option>
+        <option value="Diskrit1">Diskrit</option>
+        <option value="Bahasa Indonesia">B. Indonesia</option>
+        <option value="Sistem Operasi">Sistem Operasi</option>
+        <option value="Pemrograman Komputer">Pemrograman Komputer</option>
+        <option value="Praktik Pemrograman Komputer">Praktik PK</option>
+        <option value="Desain Perangkat Lunak">Desain PL</option>
+        <option value="Pendidikan Pancasila & Kewarganegaraan">PPKn</option>
+        <option value="Kalkulus">Kalkulus</option>
+        <option value="Struktur Data & Algoritma">Struktur DA</option>
+        </select><br>
+
+        <label for="nilaiAkhir">Nilai Akhir:</label>
+        <input type="number" id="nilaiAkhir" min="0" max="100" required><br>
+
+        <button type="button" onclick="tampilData()">TAMPIL</button>
+        <button type="reset">RESET</button>
+    </form>
+    <div id="tampilanData"></div>
+    
+    <a href="data_array.html">Data Array</a>
+    <a href="profil.html">My Biooo</a>
+</body>
+</html>

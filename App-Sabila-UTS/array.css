@@ -1,0 +1,47 @@
+body {
+    background-color: #BDB76B;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  button {
+    background-color: #556B2F;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #2F4F4F;
+  }
+  
+  #data {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  #data p {
+    margin: 0;
+    padding: 5px 0;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  
