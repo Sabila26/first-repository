@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switch Style</title>
+<style>
+    .red {
+        color: red;
+    }
+    .blue {
+        color: blue;
+    }
+    .green {
+        color: green;
+    }
+</style>
+</head>
+<body>
+    <h1 id="heading">HALO...!</h1>
+    <script>
+        var color = "red";
+
+        switch (color) {
+            case "red":
+                document.getElementById("heading").classList.add("red");
+                break;
+            case "blue":
+                document.getElementById("heading").classList.add("blue");
+                break;
+            case "green":
+                document.getElementById("heading").classList.add("green");
+                break;
+            default:
+                break;
+        }
+        </script>
+        </body>
+        </html>
