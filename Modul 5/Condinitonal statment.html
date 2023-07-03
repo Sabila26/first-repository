@@ -1,0 +1,21 @@
+<html>
+   <head>
+    <tittle> Diskon Member </tittle>
+   </head>
+   <script>
+    function cekDiscount() {
+        const totalPurchase = parseFloat(prompt("Total Pembelian Anda:"));
+        const memberStatus = prompt ("Apakah Anda Punya Kartu Member? (Iya/Tidak):");
+
+
+        // Menggunakan conditional statement
+        if (totalPurchase >= 100 && memberStatus === "Iya") {
+            document.write("Selamat Anda berhak mendapatkan Diskon 10%.");
+        } else {
+
+            document.write("Maaf, Anda tidak memenuhi syarat untuk mendapatkan Diskon.");
+        }
+    }
+    
+   </script>
+   </html>

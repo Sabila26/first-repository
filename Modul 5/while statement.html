@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program While Statement</title>
+</head>
+<body>
+  <h1>Program While Statement</h1>
+
+  <button onclick="hitung()">Mulai Menghitung</button>
+  <p id="nilai"></p>
+
+  <script>
+    function hitung() {
+      var nilai = 1;
+      var nilaiElement = document.getElementById("nilai");
+
+      while (nilai <= 10) {
+        nilaiElement.innerHTML = "Nilai Hitung: " + nilai;
+        nilai++;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Do-While Statement</title>
+</head>
+<body>
+  <h1>Program Do-While Statement</h1>
+
+  <button onclick="startCounting()">Mulai Menghitung</button>
+  <p id="counter"></p>
+
+  <script>
+    function startCounting() {
+      var counter = 1;
+      var counterElement = document.getElementById("counter");
+
+      do {
+        counterElement.innerHTML = "Nilai counter: " + counter;
+        counter++;
+      } while (counter <= 10);
+    }
+  </script>
+</body>
+</html>

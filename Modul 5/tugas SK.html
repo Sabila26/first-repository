@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas SK</title>
+  <script>
+    
+    function greet() {
+      var name = prompt("Masukkan nama Anda: ");
+      if (name != null) {
+        document.getElementById("greeting").innerHTML = "Halo, " + name + "!";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Mari Menyapa!</h1>
+  <button onclick="greet()">Klik untuk menyapa</button>
+  <p id="greeting"></p>
+</body>
+</html>

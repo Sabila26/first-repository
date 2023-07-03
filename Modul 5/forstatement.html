@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program For Statement</title>
+</head>
+<body>
+  <h1>Program For Statement</h1>
+
+  <button onclick="startCounting()">Mulai Menghitung</button>
+  <p id="counter"></p>
+
+  <script>
+    function startCounting() {
+      var counterElement = document.getElementById("counter");
+
+      for (var counter = 1; counter <= 10; counter++) {
+        counterElement.innerHTML = "Nilai counter: " + counter;
+      }
+    }
+  </script>
+</body>
+</html>

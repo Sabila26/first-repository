@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <tittle> EXECUTION CONTEXT </tittle>
+    </head>
+    <body>
+        <script>
+            let nama = "Sabila Mawarda";
+
+            function executionContextFisrt() {
+            document.write("Di dalam function");
+            executionContextSecond();
+            document.write("Di dalam functon");
+        }
+            function executionContextSecond() {
+                document.write("Di dalam function");
+            }
+            executionContextFirst();
+            document.write("Di dalam Global Execution Context");
+        </script>
+        </body>
+        </html>

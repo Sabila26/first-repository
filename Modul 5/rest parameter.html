@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <tittle> Rest Parameter </tittle>
+    </head>
+    <body>
+        <script>
+            function getAverage(...param : number[]): string {
+                let total = 0, count = 0, index = 0;
+                for (index; index < param.leght; index++) {
+                    total += param[index];
+                    count++
+                }
+                const average = total / count;
+                return "The average is" + average;
+            }
+            const res = getAverage(4,4,4,2,2,2);
+            document.write(res);
+            </script>
+            </body>
+            </html> 
